@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Gate</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: flex-start; /* align left */
+      align-items: center;         /* center vertically */
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('C:/Users/sayee/Downloads/pbl project2/WhatsApp Image 2025-01-15 at 9.41.59 PM.jpeg') no-repeat center center/cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .content {
+      color: white;
+      padding-left: 80px; /* Moves the content a bit toward the left */
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 64px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 24px;
+      margin: 15px 0 30px;
+    }
+
+    button {
+      background-color: #0073e6;
+      color: white;
+      font-size: 20px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>GRADE GATE</h1>
+    <p>Unlocking Your Potential With Precision!</p>
+    <button onclick="predictCollege()">PREDICT YOUR COLLEGE</button>
+  </div>
+
+  <script>
+    function predictCollege() {
+      window.location.href = "index1.html";
+    }
+  </script>
+</body>
+</html>
