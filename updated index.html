@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Gate</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('C:/Users/sayee/Downloads/pbl project2/WhatsApp Image 2025-01-15 at 9.41.59 PM.jpeg') no-repeat center center/cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .content {
+      color: white;
+      padding-left: 80px;
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 64px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 24px;
+      margin: 15px 0 30px;
+    }
+
+    button {
+      background-color: #0073e6;
+      color: white;
+      font-size: 20px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    .facts-box {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      color: #fff;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .fact {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.5s ease;
+      opacity: 1;
+    }
+
+    .fadeOutDown {
+      animation: fadeOutDown 0.5s forwards;
+    }
+
+    .fadeInUp {
+      animation: fadeInUp 0.5s forwards;
+    }
+
+    @keyframes fadeOutDown {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(20px); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>GRADE GATE</h1>
+    <p>Unlocking Your Potential With Precision!</p>
+    <button onclick="predictCollege()">PREDICT YOUR COLLEGE</button>
+  </div>
+
+  <div class="facts-box">
+    <div id="fact" class="fact">Loading interesting fact...</div>
+  </div>
+
+  <script>
+    function predictCollege() {
+      window.location.href = "index1.html";
+    }
+
+    const facts = [
+      "🎓 Did you know? The IIT JEE is one of the toughest exams in the world!",
+      "📊 Fact: The average acceptance rate of top Indian colleges is below 2%.",
+      "🔥 Motivation: Every topper was once a beginner who didn’t give up!",
+      "📚 Interesting: Over 1 million students appear for JEE Mains every year!",
+      "🏫 Fun Fact: The first IIT was established in Kharagpur in 1951.",
+      "💡 Quote: 'Success is where preparation and opportunity meet.' – Bobby Unser",
+      "😂 Funny: College is the only place where you pay to sleep in class!",
+      "☕ Did you know? An average engineering student consumes 1000+ cups of coffee before graduation!",
+      "📖 Nerdy Fact: The word 'alumni' comes from Latin and means 'foster son'!",
+      "👀 True Story: 'One more episode' is the biggest reason for low attendance.",
+      "🎉 Most colleges have their fests during exam season – because why not stress more?",
+      "💤 Sleep becomes a luxury and food becomes Maggi after 1st year!",
+      "🧠 Einstein once said, 'Education is what remains after one has forgotten what one learned in school.'"
+    ];
+
+    let currentFactIndex = 0;
+
+    function showNextFact() {
+      const factElement = document.getElementById("fact");
+      
+      // Fade out
+      factElement.classList.remove("fadeInUp");
+      factElement.classList.add("fadeOutDown");
+
+      setTimeout(() => {
+        factElement.innerText = facts[currentFactIndex];
+        factElement.classList.remove("fadeOutDown");
+        factElement.classList.add("fadeInUp");
+        currentFactIndex = (currentFactIndex + 1) % facts.length;
+      }, 500);
+    }
+
+    setInterval(showNextFact, 4000);
+    showNextFact();
+  </script>
+</body>
+</html>
